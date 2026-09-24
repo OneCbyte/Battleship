@@ -37,5 +37,7 @@ public:
     void clear();
 
     void print(bool showShips = false) const;
+
+    std::vector<std::vector<CellState>> getfield();
 };
 

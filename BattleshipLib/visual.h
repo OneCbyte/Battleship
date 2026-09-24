@@ -1,6 +1,5 @@
 #pragma once
+#include "game.h"
 
-void output() {
-
-
+void output(GameField gamefield) {
 }

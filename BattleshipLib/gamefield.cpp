@@ -68,6 +68,10 @@ bool GameField::shoot(const Position& pos) {
     }
 }
 
+
+std::vector<std::vector<CellState>> GameField::getfield() {return field;}
+
+
 CellState GameField::getCellState(const Position& pos) const {
     if (!pos.isValid()) {
         return EMPTY;
