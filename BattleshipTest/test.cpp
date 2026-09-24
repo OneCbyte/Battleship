@@ -1,5 +1,4 @@
 #include "pch.h"
-
 #include <gtest/gtest.h>
 #include "position.h"
 #include "ship.h"
