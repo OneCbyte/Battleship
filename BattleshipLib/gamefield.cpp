@@ -1,4 +1,4 @@
-#include "gamefield.h"
+﻿#include "gamefield.h"
 #include <iostream>
 
 GameField::GameField() : shipsAlive(0) {
@@ -36,20 +36,25 @@ bool GameField::shoot(const Position& pos) {
 
     CellState& cell = field[pos.getRow()][pos.getCol()];
 
+    // Уже стреляли сюда
     if (cell == MISS || cell == HIT || cell == SUNK) {
         return false;
     }
 
     if (cell == SHIP) {
+        // Попадание
         cell = HIT;
 
+        // Проверка, потоплен ли корабль
         for (Ship& ship : ships) {
             if (ship.occupiesPosition(pos)) {
                 ship.takeHit(pos);
                 if (ship.isSunk()) {
+                    // Пометить все клетки корабля как потопленные
                     for (const Position& p : ship.getPositions()) {
                         field[p.getRow()][p.getCol()] = SUNK;
                     }
+                    shipsAlive--;  // ← ДОБАВИТЬ ЭТУ СТРОКУ
                 }
                 break;
             }
@@ -57,7 +62,7 @@ bool GameField::shoot(const Position& pos) {
         return true;
     }
     else {
-        // ������
+        // Промах
         cell = MISS;
         return false;
     }
