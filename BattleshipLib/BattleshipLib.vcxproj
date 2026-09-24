@@ -145,6 +145,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="ship.h" />
+    <ClInclude Include="visual.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
