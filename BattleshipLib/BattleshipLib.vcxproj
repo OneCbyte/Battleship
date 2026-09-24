@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="gamefield.h" />
+    <ClInclude Include="gamefiels.cpp" />
     <ClInclude Include="position.h" />
     <ClInclude Include="ship.h" />
   </ItemGroup>
