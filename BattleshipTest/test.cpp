@@ -84,6 +84,18 @@ TEST(ShipTest, GetPositions_Vertical) {
     EXPECT_EQ(positions[2], Position(2, 0));
 }
 
+TEST(PositionTest, NegativeRowIsInvalid) {
+    EXPECT_FALSE(Position(-1, 5).isValid());
+}
+
+TEST(PositionTest, NegativeColumnIsInvalid) {
+    EXPECT_FALSE(Position(5, -1).isValid());
+}
+
+TEST(PositionTest, BothCoordinatesNegativeAreInvalid) {
+    EXPECT_FALSE(Position(-1, -1).isValid());
+}
+
 TEST(ShipTest, OccupiesPosition) {
     Position start(5, 5);
     Ship ship(3, start, true);
